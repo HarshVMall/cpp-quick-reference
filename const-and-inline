@@ -1,0 +1,29 @@
+A. Const keyword with pointer (thumb rule) - 
+
+<left hand side value> * <right hand side value> p = &n;
+        (data side)            (pointer side)
+        
+        
+
+const int n = 5;
+const int * p = &n; //n has to be constant
+*p = 6; //error as n is const
+
+
+int n = 5, m=6;
+int * const p = &n; //p is constant
+*p = 6; // no error as n is not a constant
+p = &m; // error as p is a const pointer so can be pointed to only one value
+
+B. Inline function
+It is just another function (it is used as an alternative to #define) - 
+
+  //case 1
+  #define SQUARE(X) X*X
+  int a = 4
+  b = SQUARE(a+1) // b = 9 (4 + 1*1 + 4)
+
+  // case 2
+  inline SQUARE(int x) { return X*X; }
+  int a = 4;
+  b = SQUARE(a+1) // b = 25; the value is correct as there is no text replacement as in the case of #define but an actual function SQUARE(X) is written by the compiler
