@@ -1,0 +1,10 @@
+Pointers                                                                                      Reference
+
+-- can point to NULL                                                                             -- Cannot point to NULL
+
+-- can point to different variables at different times -                                         -- reference is fixed
+*p;                                                                                           &b = a;
+p = &a;                                                                                       &b = c; //error as b is an alias of a
+p = &b; // correct
+
+-- NULL checking is required                                                                  -- NULL checking is not required
