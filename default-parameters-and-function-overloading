@@ -1,0 +1,27 @@
+Default parameters 
+
+A. Function with default parameter
+
+//////////////////////////////////////////////////////////
+
+int IdentityFunction(int a = 10){
+  return a;
+}
+
+int main() {
+  int x = 5, y;
+  
+  y = IdentityFunction(x);  //usual function call
+  y = IdentityFunction();  //uses default parameter
+  
+  return 0;
+}
+
+/////////////////////////////////////////////////////////
+
+B. Function overloading
+
+int Area(int a, int b);
+int Area(int a);  //correct function overloading
+double Area(double a, double b);  //correct function overloading
+double Area(int a, int b);  // This will be an error. Function overloading is done based on function parameters and not on the return value.
