@@ -1,0 +1,14 @@
+In C++ there is a new keyword: Operator
+
+a + b       -------------->  operator+(a,b)
+c = a + b   -------------->  operator=(c, operator+(a,b))
+
+example :
+  MyType a,b; // an enum or struct
+  MyType operator+(MyType, MyType);
+  a + b; // calls operator+(a,b)
+  
+For prefix and postfix umary operator -
+  Prefix - MyType& operator++(MyType& s1)
+  Postfix - MyType& operator++(MyType& s1, int) //the int will not be in the actual call of the operator (a++)
+  
