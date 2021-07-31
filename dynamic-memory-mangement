@@ -1,0 +1,13 @@
+C way of allocating dynamic memory (can be used in c++ also because of backward compatibility) - 
+  int *p = (int *)malloc(sizeof(int)* 3);    // malloc returns void*
+  *p = 5;
+  free(p);    //malloc allocates memory on heap section and should be freed at the end of execution
+  
+C++ way of allocating dynamic memory - 
+  int* p = new int(5);   // initialization can be done here only i.e. value 5 is given.
+  int* arr = new int[4];  // dynamic memory allocation of array
+  cout<< *p;
+  delete p;
+  delete [] arr;
+  
+  //importand distiction - new and delete are operators (like +, -, *) and malloc and free are functions
