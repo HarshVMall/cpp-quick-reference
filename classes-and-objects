@@ -1,0 +1,39 @@
+class stack {
+  public:
+    char data[100], int top_;  // variables
+    
+    //functions
+    bool empty {.....}
+    char top {.....}
+    void push(char x) {.....}
+    void pop() {.....}
+    
+    void f(int k1, int k2) {
+      this->top_ = k2;
+      .
+      .
+      .
+    }
+}
+
+this pointer - holds the address of the object
+Type of this pointer for a class X object is ---> X* const this;
+
+-------------------------------------------------------------------------------------------
+Functions of a class are accessed using ::
+
+So in filename.h
+  class Stack {
+    double im,re;
+    
+    //functions
+    getValues();
+  }
+  
+In file filename.cpp
+  //definition
+  Stack::getValues() {
+    .......
+  }
+-------------------------------------------------------------------------------------------
+Get set method: used for more fine grained access control (getters and setters)
