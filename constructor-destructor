@@ -1,0 +1,57 @@
+Constructor is called inplicitly when an object is created.
+Constructor/Destructor does not have a return type.
+
+class Stack {
+  private:
+    char* data_, int top_;
+  
+  public:
+    Stack(): data_(new char[10]), top_(-1) {   /// initialization list
+      cout << "Constructor called!!!" << endl;
+    }
+    
+    ~Stack() {
+      delete [] data_;
+    }
+}
+
+
+A default constructor will set garbega value to the data members
+A destructor is unique. That is -  destructor cannot be overloaded
+
+
+Order of destruction is reverse to the order of contruction - 
+
+int main() {
+  Complex C;
+  Complex D;
+  
+  .
+  .
+  .
+  .
+  .
+  
+  return 0;
+}
+
+In the above example-  
+1. C constructor called
+2. D constructor called
+3. main function execution
+4. D destructor called
+5. C destructor called
+
+
+Dynamic allocation of object (arrow operator will be used instead of dot operator for accessing the members of the class)
+
+Complex* pc = new Complex(1.1 , 2.4);
+Complex* pd = new Complex[2];  /// array of objects, initialization list should be present in constructor for array of objects
+
+unsigned char buf[100];
+Complex* pe = new (buf) Complex(4.5, 5.8);
+
+//Release of objects, can be done in any order
+delete pc;    //first the destructor will be called and then the memory will be freed.
+delete [] pd;
+pe->~Complex();   // memory is allocated on the buffer, so no delete operation is called, only the destructor needs to be called explicitly
