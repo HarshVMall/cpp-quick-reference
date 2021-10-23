@@ -23,3 +23,24 @@ While initializing data members in a class --
   Complex c2(c1);
   Complex c2 = c1;
   // both the above are creating a copy constructor c2
+
+
+//copy constructor is called during call by value
+Complex(double re, double im) : re_(re), im_(im) {cout << "constructor called!!!"}
+Complex(const Complex& c) : re_(c.re_), im_(c.im_) {cout << "copy constructor called!!!"};
+void Print() {.......}
+~Complex() {cout << "Dtor called!!!"}  /// TO NOTE: destructor will be common for both the constructors above
+void display(complex c_param) { //call by value
+  cout << c_param.Print();
+}
+
+
+int main() {
+  Complex c{4.2 , 5.3};
+  Display(c); // copy constructor will be called. The following line --- "copy constructor called!!!" will be printed
+  return 0;
+}
+
+
+
+/// if no copy constructor is provided, then the compiler creates a free copy constructor (just like when constructor and destructor are not provided)
