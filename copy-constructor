@@ -1,0 +1,25 @@
+While initializing data members in a class -- 
+  Order of initialization does not depend on the order of initialization list but on the order in which the data members are defined.
+  
+  example - 
+    class X {
+      int _m2;
+      int _m1;
+      
+      public:
+        X(int m1, int m2) : 
+              _m1(m1), // called 2nd because _m2 is defined first in line 6
+              _m2(m2)  // called 1st
+              {......}
+    }
+    
+    
+// copy constructor : it takes the object of the same type and constructs a copy
+// Complex::Complex(const Complex &);
+
+  Complex(double re, double im) : re_(re), im_(im) {.....}
+  Complex(const Complex& c) : re_(c.re_), im_(c.im_);
+  
+  Complex c2(c1);
+  Complex c2 = c1;
+  // both the above are creating a copy constructor c2
