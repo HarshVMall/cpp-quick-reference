@@ -1,0 +1,10 @@
+//Assigning an already constructed object to another already constructed object
+
+Complex(double re, double im)
+Complex& operator=(const Complex& c);   /// copy assingnment operator
+
+Complex c1(1.1, 4.2), c2(2.9, 6.7);
+c2 = c1; //copy assignment operator is called
+
+
+*** copy is not necessarily a clone. A copy is whatever I want to copy based on the fuction body in copy assignment operator of line number 4
