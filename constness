@@ -1,0 +1,7 @@
+Constant member functions are used to support constness in C++, now this function can be invoked using a constant object
+access the member functions and variables.
+        void print() const {....}   // constness is introduced
+        
+        
+A mutable data member is changeable in a constant object
+  mutable int  mutableMem;
