@@ -1,0 +1,18 @@
+Static data members are associated with class and not with object. Static data members exist even if there is no object of the class
+No matter how many objects are created for a class, there will be only one static data member
+
+class MyClass {
+  static int x;   // declaration
+}
+.
+.
+.
+.
+.
+int MyClass::x = 15; // definition
+
+Static member function - 
+It cannot have a this pointer as it is not related to any object
+As a result, it cannot access non-static data members/ non-static member functions as they are part of any particular object.
+
+Singleton class - A class is called singleton if it can have only one instance
