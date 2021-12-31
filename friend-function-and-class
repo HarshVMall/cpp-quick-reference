@@ -1,0 +1,27 @@
+class MyClass {
+private:
+  int x;
+ 
+public:
+  friend void accessorFunction();
+}
+
+void accessorFunction(const MyClass& a) {
+  cout << a.x;  // although the member is private, we can access this because the function is declared as friend inside class
+}
+
+Friend function has access to protected and private functions of a class
+If a function requires to access the members of 2 classes, then make it as friend of both and define it outside the class
+
+Friend class: a class can also be made friend of another class. In this way it can access the protected and private members of the other class
+
+class List {
+.
+.
+.
+}
+
+class Node {
+public:
+  friend class List;
+}
