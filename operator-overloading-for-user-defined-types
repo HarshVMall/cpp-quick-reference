@@ -1,0 +1,21 @@
+class Complex {
+  double re,im;
+  
+public:
+  Complex(double a=0.0, double b=0.0) : 
+    re(a), im(b) {}
+  ~Complex() {}
+  void display();
+  Complex operator+(const Complex &c) {   //  it is actually read by the compiler as --- Complex(this, const Complex &c)
+    Complex r;
+    r.re = re + c.re;
+    r.im = im + c.im;
+    return r;
+  }
+};
+
+int main() {
+  Complex c1(4.5, 6.7), c2(1.5,7.4), c3;
+  c3 = c1 + c2;   /// it is read as --- c1.operator+(c2)
+  return 0;
+}
