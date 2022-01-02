@@ -1,0 +1,28 @@
+namespace MyNameSpace {
+  int myData;
+  class MyClass {
+  ....
+  };
+  
+  void myFunction {
+  ....
+  }
+}
+
+void main() {
+  MyNameSpace::myData = 0;
+}
+
+
+---------------------------------------------
+namespaces are open ->
+  namespace myNamespace {
+    int x = 1;
+  }
+  
+  namespace myNamespace {
+    int y = 2;
+  }
+  
+// both the x and y are part of the same namespace - myNamespace, so it means that a namespace can be reopened unlike a class
+// a namespace can be unnamed also, it is done so that they can be segregated and cannot be used from outside (they will be hidden from outside code and will interact only within themselves)
