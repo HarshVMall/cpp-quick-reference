@@ -1,0 +1,10 @@
+ISA relationship - 
+Rose ISA Flower (Rose has all the properties of flower, but it has its own unique properties also)
+Red Rose ISA Rose
+------------------------------------
+In C++:
+Derived ISA Base
+-------------------------------------
+class Flower;
+class Rose : public Flower;
+class RedRose : public Rose;
