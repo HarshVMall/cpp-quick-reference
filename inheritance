@@ -8,3 +8,27 @@ Derived ISA Base
 class Flower;
 class Rose : public Flower;
 class RedRose : public Rose;
+
+
+Derived class does not inherit static member functions and friend functions of base class
+
+Protected access specifier : acts as public for derived class
+                             acts as private for global functions and other classes
+                             
+------------------------------------------------------------------------------------------------
+
+Constructors and destructors in inheritance -- 
+class B {
+protected:
+  int data;
+public:
+  B(int d=0) : data(d) {....}
+}
+
+class D : public B {
+protected:
+  int info;
+public:
+  D(int d, int i) : B(d), info(i) {....}  /// explicit constructor of base
+  D(int i) : info(i) {....}  //// default constructor of base will be called before initializing info(i) (a default constructor of base class should be present for this to work)
+}
