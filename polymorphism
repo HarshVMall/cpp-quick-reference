@@ -1,0 +1,14 @@
+Casting -- 
+  double d = 1.2;
+  int i = 4;
+  
+  i = d; // implicit casting, some information will be lost
+  i = (int)d; // explicit casting
+  
+class A {}
+class B : public A {}
+
+A* pa = 0;
+B* pb = 0;
+pa = pb; // permitted UPCASTING
+pb = pa; // error; not permitted DOWNCASTING
