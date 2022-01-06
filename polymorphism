@@ -12,3 +12,39 @@ A* pa = 0;
 B* pb = 0;
 pa = pb; // permitted UPCASTING
 pb = pa; // error; not permitted DOWNCASTING
+
+---------------------------------------------------------------
+Virtual functions are used for dynamic binding -- 
+
+class B {
+public:
+  void f();
+  virtual void g();
+}
+
+class D : public B {
+public:
+  void f();
+  virtual void g();
+}
+
+int main() {
+  B b;
+  D d;
+  
+  B* pb = &b;
+  B* pd = &d; // UPCAST
+  
+  B& rb = b;
+  B& rd = d;  // UPCAST
+  
+  pb->f();  // B::f  -- static binding
+  pb->g();  // B::g  -- dynamic binding
+  pd->f();  // B::f  -- static binding
+  pd->g();  // D::g  -- dynamic binding, function of D is called instead of B (virtual function causes dynamic binding)
+  
+  rb.f();   // B::f  -- static binding
+  rb.g();   // B::g  -- dynamic binding
+  rb.f();   // B::f  -- static binding
+  rb.g();   // D::g  -- dynamic binding
+}
