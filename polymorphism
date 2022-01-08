@@ -48,3 +48,16 @@ int main() {
   rb.f();   // B::f  -- static binding
   rb.g();   // D::g  -- dynamic binding
 }
+
+-----------------------------------------------------------------------
+class A {};
+class B : public A {}
+
+int main() {
+  A* p;
+  p = new B; // static type of p = A, dynamic type of p = B (i.e. an object of type B has been put into p at runtime), new operator gives memory at runtime
+}
+
+Static binding (early binding) - function invocation binds to function definition at compile time
+Dynamic binding (late binding) - function invacation binds to function definition at runtime (arrow -> operator is used) e.g. function pointers and virtual functions
+Dynamic binding is possible only for pointer or reference data types (see line 35-39)
