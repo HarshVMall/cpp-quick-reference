@@ -10,6 +10,13 @@ class Singleton {
         cout << "Singleton constructor called!!" << endl;
     }
     
+    //Delete copy constructor
+    Singleton(const Singleton&) = delete;
+    
+    //Delete copy assignment operator
+    Singleton& operator=(const Singleton&) = delete;
+    
+    
     public:
     
     //Thread safe static function so that only one instance is available
